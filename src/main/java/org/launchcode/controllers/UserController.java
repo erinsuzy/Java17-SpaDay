@@ -22,7 +22,7 @@ public class UserController {
    @PostMapping("/user")
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
         if(Objects.equals(verify, user.getPassword())){
-            System.out.println("Welcome " + user.getUsername());
+            return "/user/index";
         }
         return "/user/add";
     }
